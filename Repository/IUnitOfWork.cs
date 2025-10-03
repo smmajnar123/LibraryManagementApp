@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    interface IUnitOfWork
+    public interface IUnitOfWork
     {
         IBooksRepository BooksRepository { get; }
 
