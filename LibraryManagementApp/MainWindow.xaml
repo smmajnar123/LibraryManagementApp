@@ -5,8 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryManagementApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Library Management App" Height="500" Width="900">
 
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <!-- Define Rows: Header, Content, Footer -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <!-- Header -->
+            <RowDefinition Height="*"/>
+            <!-- Content -->
+            <RowDefinition Height="40"/>
+            <!-- Footer -->
+        </Grid.RowDefinitions>
+
+        <!-- Define Columns: Sidebar + Main Content -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <!-- Sidebar -->
+            <ColumnDefinition Width="*"/>
+            <!-- Main Content -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#FF2D6EB9">
+            <TextBlock Text="Library Management System" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Center" 
+                       FontSize="20" 
+                       Foreground="White" 
+                       FontWeight="Bold"/>
+        </Border>
+
+        <!-- Sidebar -->
+        <StackPanel Grid.Row="1" Grid.Column="0" Background="#FF3A8CCF">
+            <Button Content="Dashboard" Margin="10" Height="40" Command="{Binding ShowDashboardCommand}"/>
+            <Button Content="Profile" Margin="10" Height="40" Command="{Binding ShowBooksCommand}"/>
+            <Button Content="About" Margin="10" Height="40" Command="{Binding ShowBorrowRecordsCommand}"/>
+            <Button Content="Help" Margin="10" Height="40" Command="{Binding ShowMembersCommand}"/>
+            <Button Content="Settings" Margin="10" Height="40" Command="{Binding ShowSettingsCommand}"/>
+        </StackPanel>
+
+        <!-- Main Content -->
+        <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding CurrentView}" Background="#FFE5E5E5"/>
+
+        <!-- Footer -->
+        <Border Grid.Row="2" Grid.ColumnSpan="2" Background="#FF2D6EB9">
+            <TextBlock Text="© 2025 Library Management App" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Center" 
+                       Foreground="White"/>
+        </Border>
     </Grid>
 </Window>
