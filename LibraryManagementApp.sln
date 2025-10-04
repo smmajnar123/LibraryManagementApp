@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36408.4 d17.14
+VisualStudioVersion = 17.14.36408.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagementApp", "LibraryManagementApp\LibraryManagementApp.csproj", "{139EA55A-077D-4BD6-B5E3-26B470556EF4}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{D6E82867-E4A9-4BE4-99E9-88ED4B7AC434}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{AF24E02E-A21C-4F9B-A303-F005D9B9A2A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapper", "Mapper\Mapper.csproj", "{086DE979-9B62-49B7-9EAD-1D9C964A0E6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{AF24E02E-A21C-4F9B-A303-F005D9B9A2A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF24E02E-A21C-4F9B-A303-F005D9B9A2A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF24E02E-A21C-4F9B-A303-F005D9B9A2A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{086DE979-9B62-49B7-9EAD-1D9C964A0E6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{086DE979-9B62-49B7-9EAD-1D9C964A0E6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{086DE979-9B62-49B7-9EAD-1D9C964A0E6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{086DE979-9B62-49B7-9EAD-1D9C964A0E6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

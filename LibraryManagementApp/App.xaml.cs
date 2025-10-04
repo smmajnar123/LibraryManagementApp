@@ -9,6 +9,7 @@ namespace LibraryManagementApp
     /// </summary>
     public partial class App : Application
     {
+
     }
 
 }
