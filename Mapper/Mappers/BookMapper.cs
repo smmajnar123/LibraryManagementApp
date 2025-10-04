@@ -44,5 +44,11 @@ namespace Mapper.Mappers
             entity.PublishedYear = dto.PublishedYear;
             entity.AvailableCopies = dto.AvailableCopies;
         }
+
+        public IEnumerable<BookDto> ToDtoList(IEnumerable<Book> entities)
+        {
+            return entities.Select(ToDto).ToList();
+        }
+
     }
- }
+}

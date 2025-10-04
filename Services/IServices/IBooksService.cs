@@ -1,4 +1,5 @@
 ﻿using Database.Models;
+using Shared.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,10 @@ namespace Services.IServices
 {
     public interface IBooksService
     {
-        Task<IEnumerable<Book>> GetAllBooksAsync();
-        Task<Book?> GetBookByIdAsync(int bookId);
-        Task<Book> AddBookAsync(Book book);
-        Task<Book> UpdateBookAsync(Book book);
-        Task DeleteBookAsync(int bookId);
+        Task<IEnumerable<BookDto>> GetAllBooksAsync();                // Return DTOs
+        Task<BookDto?> GetBookByIdAsync(int bookId);                 // Return single DTO
+        Task<BookDto> AddBookAsync(CreateBookDto createDto);         // Accept Create DTO
+        Task<BookDto?> UpdateBookAsync(int bookId, UpdateBookDto updateDto); // Accept Update DTO
+        Task<bool> DeleteBookAsync(int bookId);                      // Return success/failure
     }
 }

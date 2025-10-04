@@ -13,5 +13,6 @@ namespace Mapper.IMapper
         BookDto ToDto(Book entity);
         Book ToEntity(CreateBookDto dto);
         void UpdateEntity(Book entity, UpdateBookDto dto);
+        IEnumerable<BookDto> ToDtoList(IEnumerable<Book> entities);
     }
 }
