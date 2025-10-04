@@ -11,7 +11,11 @@ namespace LibraryManagementApp
         public object? CurrentView
         {
             get => _currentView;
-            set
+            set { _currentView = value; OnPropertyChanged(); }
+        }
+
+        private string _pageHeader = "Dashboard";
+        public string PageHeader
             {
                 _currentView = value;
                 OnPropertyChanged();
