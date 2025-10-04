@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementApp.ViewModels
 {
-    internal class DashboardViewModel
+    public class DashboardViewModel
     {
+        public string WelcomeMessage { get; set; } = "Welcome to the Dashboard!";
     }
 }

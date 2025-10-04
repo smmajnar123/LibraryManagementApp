@@ -42,11 +42,11 @@
 
         <!-- Sidebar -->
         <StackPanel Grid.Row="1" Grid.Column="0" Background="#FF3A8CCF">
-            <Button Content="Dashboard" Margin="10" Height="40" Command="{Binding ShowDashboardCommand}"/>
-            <Button Content="Profile" Margin="10" Height="40" Command="{Binding ShowBooksCommand}"/>
-            <Button Content="About" Margin="10" Height="40" Command="{Binding ShowBorrowRecordsCommand}"/>
-            <Button Content="Help" Margin="10" Height="40" Command="{Binding ShowMembersCommand}"/>
-            <Button Content="Settings" Margin="10" Height="40" Command="{Binding ShowSettingsCommand}"/>
+            <Button Content="Dashboard" Margin="10" Height="40" CommandParameter="Dashboard" Command="{Binding ShowDashboardCommand}"/>
+            <Button Content="Profile" Margin="10" Height="40" />
+            <Button Content="About" Margin="10" Height="40"/>
+            <Button Content="Help" Margin="10" Height="40"/>
+            <Button Content="Settings" Margin="10" Height="40"/>
         </StackPanel>
 
         <!-- Main Content -->

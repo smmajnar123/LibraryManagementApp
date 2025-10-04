@@ -1,5 +1,9 @@
-﻿using System.ComponentModel;
+﻿using LibraryManagementApp.ICommand;
+using LibraryManagementApp.ViewModels;
+using LibraryManagementApp.Views;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Controls;
 
 namespace LibraryManagementApp
 {
@@ -7,8 +11,8 @@ namespace LibraryManagementApp
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        private object? _currentView;
-        public object? CurrentView
+        private UserControl? _currentView;
+        public UserControl? CurrentView
         {
             get => _currentView;
             set { _currentView = value; OnPropertyChanged(); }
@@ -16,23 +20,18 @@ namespace LibraryManagementApp
 
         private string _pageHeader = "Dashboard";
         public string PageHeader
-            {
-                _currentView = value;
-                OnPropertyChanged();
-            }
+        {
+            get => _pageHeader;
+            set { _pageHeader = value; OnPropertyChanged(); }
         }
 
         // Commands
         public System.Windows.Input.ICommand ShowDashboardCommand { get; }
-        public System.Windows.Input.ICommand ShowBooksCommand { get; }
-        public System.Windows.Input.ICommand ShowBorrowRecordsCommand { get; }
-        public System.Windows.Input.ICommand ShowMembersCommand { get; }
-        public System.Windows.Input.ICommand ShowSettingsCommand { get; }
 
         public MainWindowViewModel()
         {
             // Initialize commands
-            //ShowDashboardCommand = new RelayCommand(o => CurrentView = new Views.DashboardView());
+            ShowDashboardCommand = new RelayCommand(param => Navigate(param?.ToString()));
             //ShowBooksCommand = new RelayCommand(o => CurrentView = new Views.BooksView());
             //ShowBorrowRecordsCommand = new RelayCommand(o => CurrentView = new Views.BorrowRecordsView());
             //ShowMembersCommand = new RelayCommand(o => CurrentView = new Views.MembersView());
@@ -41,6 +40,25 @@ namespace LibraryManagementApp
             //// Set default view
             //CurrentView = new Views.DashboardView();
         }
+        private void Navigate(string? pageName)
+        {
+            if (string.IsNullOrWhiteSpace(pageName)) return;
+
+            switch (pageName)
+            {
+                case "Dashboard":
+                    var dashboardVM = new DashboardViewModel();
+                    var dashboardView = new DashboardUC { DataContext = dashboardVM };
+                    CurrentView = dashboardView;
+                    PageHeader = "Dashboard";
+                    break;
+                default:
+                    PageHeader = "Page Not Found";
+                    CurrentView = null;
+                    break;
+            }
+        }
+
 
         protected void OnPropertyChanged([CallerMemberName] string? name = null)
         {
